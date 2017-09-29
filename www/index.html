@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Chromiumizer</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#4285F4">
+<link rel="author" href="mailto:d@domenic.me" title="Domenic Denicola">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="style.css">
+
+<script type="module" src="js/entry.mjs"></script>
+
+<header>
+  <h1>Chromiumizer</h1>
+</header>
+
+<main>
+  <p id="drop-target-label">Drop an image here,<br> or click to upload:</p>
+
+  <div id="drop-target" tabindex="0"></div>
+
+  <canvas id="output" hidden></canvas>
+
+  <button id="again" hidden>Do another one</button>
+</main>
+
+<footer>
+  <p>Made by Domenic.</p>
+  <p>See source and report issues <a href="https://github.com/domenic/chromiumizer">on GitHub</a>.</p>
+</footer>

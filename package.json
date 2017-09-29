@@ -1,0 +1,20 @@
+{
+  "name": "chromiumizer",
+  "version": "1.0.0-pre",
+  "description": "A web app for converting images into the Chromium color palette",
+  "repository": "domenic/chromiumizer",
+  "keywords": [
+    "chrome",
+    "chromium",
+    "color",
+    "pwa"
+  ],
+  "author": "Domenic Denicola <d@domenic.me> (https://domenic.me/)",
+  "license": "Apache-2.0",
+  "scripts": {
+    "start": "ecstatic www"
+  },
+  "dependencies": {
+    "ecstatic": "^3.0.0"
+  }
+}
