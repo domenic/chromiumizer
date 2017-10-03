@@ -1,6 +1,6 @@
 # Chromiumizer
 
-This is a progressive web app for converting an image into a "Chromiumized" version, i.e. one that uses the [Chromium](https://www.chromium.org/) color palette. I originally created it so I could create a distinguishable avatar image for my @chromium.org email address.
+This is a progressive web app for converting an image into a "Chromiumized" version, i.e. one that uses the [Chromium](https://www.chromium.org/) color palette. I originally created it so I could have a distinguishable avatar image for my @chromium.org email address.
 
 ## Browser compatibility and interop
 
@@ -12,4 +12,4 @@ Some people have also reported issues, even on Chrome, with desktop drag-and-dro
 
 ## Credits
 
-The original impetus for this comes from [@bsittler](https://github.com/bsittler/), who suggested a series of arcane command-line tools one could string together to achieve the same effect. I thought, why not just use web technologies, and get a nice user interface while we're at it? Thus, Chromiumizer was born. Thanks to Ben for showing me the right underlying technique!
+The original impetus for this comes from [@bsittler](https://github.com/bsittler/), who suggested a series of arcane command-line tools one could string together to achieve this effect. I thought, why not just use web technologies, and get a nice user interface while we're at it? Thus, Chromiumizer was born. Thanks to Ben for showing me the right underlying technique!
