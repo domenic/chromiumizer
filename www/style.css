@@ -7,7 +7,7 @@ html {
   --theme-color: #4285F4;
   --side-margin: 10%;
   --body-width: calc(100% - 2 * var(--side-margin));
-  --body-max-width: 600px;
+  --body-max-width: 800px;
 }
 
 * {
@@ -21,7 +21,7 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 h1, main, footer {
@@ -66,13 +66,20 @@ main {
   flex-direction: column;
 }
 
-#drop-target-label {
+.drop-target-label {
   margin-bottom: 1rem;
 }
 
-#drop-target-label[hidden] {
-  display: block;
-  visibility: hidden;
+@media (pointer: coarse) {
+  .drop-target-label.desktop {
+    display: none;
+  }
+}
+
+@media (pointer: fine) {
+  .drop-target-label.mobile {
+    display: none;
+  }
 }
 
 #drop-target {
@@ -81,11 +88,13 @@ main {
   margin: 0 auto;
   flex: 1;
   cursor: pointer;
+  max-height: 60vh;
 }
 
 #output {
-  margin: 0 auto;
+  margin: 1rem auto 0 auto;
   max-width: var(--body-width);
+  max-height: 60vh;
 }
 
 #again {
@@ -94,6 +103,7 @@ main {
   cursor: pointer;
   font: inherit;
   margin-top: 1rem;
+  text-decoration: underline;
 }
 
 #again:hover {

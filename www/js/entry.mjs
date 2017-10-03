@@ -1,7 +1,7 @@
 import chromiumize from "./chromiumize.mjs";
 import { isImageFile, getImageViaPicker, blobToImageData } from "./utils.mjs";
 
-const dropTargetLabel = document.querySelector("#drop-target-label");
+const dropTargetLabels = [...document.querySelectorAll(".drop-target-label")];
 const dropTarget = document.querySelector("#drop-target");
 const output = document.querySelector("#output");
 const again = document.querySelector("#again");
@@ -41,7 +41,7 @@ dropTarget.addEventListener("click", async () => {
 again.addEventListener("click", () => {
   output.hidden = true;
   again.hidden = true;
-  dropTargetLabel.hidden = false;
+  dropTargetLabels.forEach(l => l.hidden = false);
   dropTarget.hidden = false;
 });
 
@@ -50,7 +50,7 @@ async function processFile(file) {
 
   chromiumize(imageData);
 
-  dropTargetLabel.hidden = true;
+  dropTargetLabels.forEach(l => l.hidden = true);
   dropTarget.hidden = true;
 
   // CSS will constrain us to fit in the viewport. These dimensions govern the output bitmap size, which at
