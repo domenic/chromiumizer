@@ -1,6 +1,6 @@
 {
   "name": "Chromiumizer",
-  "description": "Converts an image into the Chromium color pallette.",
+  "description": "Convert an image into the Chromium color pallette",
   "display": "standalone",
   "background_color": "white",
   "theme_color": "#4285F4",
