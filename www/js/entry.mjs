@@ -1,7 +1,9 @@
 import chromiumize from "./chromiumize.mjs";
-import { isImageFile, getImageViaPicker, blobToImageData } from "./utils.mjs";
+import { isImageFile, getImageViaPicker, blobToImageData, canvasToBlob, downloadFile }
+  from "./utils.mjs";
 
-const dropTargetLabels = [...document.querySelectorAll(".drop-target-label")];
+const beforeUpload = [...document.querySelectorAll(".before-upload")];
+const afterUpload = [...document.querySelectorAll(".after-upload")];
 const dropTarget = document.querySelector("#drop-target");
 const output = document.querySelector("#output");
 const again = document.querySelector("#again");
@@ -9,6 +11,8 @@ const again = document.querySelector("#again");
 if (navigator.serviceWorker) {
   navigator.serviceWorker.register("/service-worker.js");
 }
+
+let currentFilename;
 
 // Mark it as willing to accept the drop of image items
 dropTarget.addEventListener("dragenter", e => {
@@ -38,11 +42,18 @@ dropTarget.addEventListener("click", async () => {
   processFile(file);
 });
 
+// Clicking on the output will trigger a download
+output.addEventListener("click", async () => {
+  const blob = await canvasToBlob(output);
+  const filename = currentFilename.replace(/\.[^.]+$/, "") + "-chromiumized.png";
+  const file = new File([blob], filename);
+
+  downloadFile(file);
+});
+
 again.addEventListener("click", () => {
-  output.hidden = true;
-  again.hidden = true;
-  dropTargetLabels.forEach(l => l.hidden = false);
-  dropTarget.hidden = false;
+  beforeUpload.forEach(el => el.hidden = false);
+  afterUpload.forEach(el => el.hidden = true);
 });
 
 async function processFile(file) {
@@ -50,16 +61,15 @@ async function processFile(file) {
 
   chromiumize(imageData);
 
-  dropTargetLabels.forEach(l => l.hidden = true);
-  dropTarget.hidden = true;
-
-  // CSS will constrain us to fit in the viewport. These dimensions govern the output bitmap size, which at
-  // least in Chrome impacts the result of right click > "Save image as...".
+  // CSS will constrain us to fit in the viewport. These dimensions govern the output bitmap size,
+  // which will impact the downloaded file.
   output.width = imageData.width;
   output.height = imageData.height;
   const context = output.getContext("2d");
   context.putImageData(imageData, 0, 0);
 
-  output.hidden = false;
-  again.hidden = false;
+  beforeUpload.forEach(el => el.hidden = true);
+  afterUpload.forEach(el => el.hidden = false);
+
+  currentFilename = file.name;
 }

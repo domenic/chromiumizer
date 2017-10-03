@@ -23,3 +23,18 @@ export function getImageViaPicker() {
     input.click();
   });
 }
+
+export function canvasToBlob(canvas) {
+  return new Promise(resolve => {
+    canvas.toBlob(resolve);
+  });
+}
+
+export function downloadFile(file) {
+  const url = URL.createObjectURL(file);
+
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = file.name;
+  link.click();
+}

@@ -26,14 +26,17 @@
 </header>
 
 <main>
-  <p class="drop-target-label desktop">Drop an image here,<br> or click to upload:</p>
-  <p class="drop-target-label mobile">Tap to upload:</p>
+  <p class="label desktop before-upload">Drop an image here,<br> or click to upload:</p>
+  <p class="label mobile before-upload">Tap to upload:</p>
 
-  <div id="drop-target" tabindex="0"></div>
+  <p class="label desktop after-upload" hidden>Click to download:</p>
+  <p class="label mobile after-upload" hidden>Tap to download:</p>
 
-  <canvas id="output" hidden></canvas>
+  <div id="drop-target" class="before-upload" tabindex="0"></div>
 
-  <button id="again" hidden>Do another one</button>
+  <canvas id="output" class="after-upload" tabindex="0" hidden></canvas>
+
+  <button id="again" class="after-upload" hidden>Do another one</button>
 </main>
 
 <footer>
