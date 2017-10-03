@@ -1,0 +1,48 @@
+{
+  "name": "Chromiumizer",
+  "description": "Converts an image into the Chromium color pallette.",
+  "display": "standalone",
+  "background_color": "white",
+  "theme_color": "#4285F4",
+  "orientation": "portrait",
+  "start_url": "/",
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "images/chromiumizer-48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "images/chromiumizer-56.png",
+      "sizes": "56x56",
+      "type": "image/png"
+    },
+    {
+      "src": "images/chromiumizer-102.png",
+      "sizes": "102x102",
+      "type": "image/png"
+    },
+    {
+      "src": "images/chromiumizer-144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "images/chromiumizer-168.png",
+      "sizes": "168x168",
+      "type": "image/png"
+    },
+    {
+      "src": "images/chromiumizer-256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "images/chromiumizer-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
