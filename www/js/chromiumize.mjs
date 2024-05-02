@@ -19,11 +19,8 @@ function toGrayscale(imageData) {
 }
 
 function grayscaleToChromium(imageData) {
-  const [startR, startB, startG] = CHROMIUM_COLOR_START;
-  const [endR, endB, endG] = CHROMIUM_COLOR_END;
-
   const d = imageData.data;
-  // TODO clean this up into a single loop? Or would that be too "clever" / hard to read?
+
   for (let i = 0; i < d.length; i += 4) {
     const [r, g, b] = [d[i], d[i + 1], d[i + 2]];
 
