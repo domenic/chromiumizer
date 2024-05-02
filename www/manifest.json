@@ -5,7 +5,7 @@
   "background_color": "white",
   "theme_color": "#4285F4",
   "orientation": "portrait",
-  "start_url": "/",
+  "start_url": "https://domenic.github.io/chromiumizer/",
   "lang": "en",
   "dir": "ltr",
   "icons": [
